@@ -21,6 +21,10 @@ cleanup chores from a single dashboard.
 - **Settings** – multi-language support, dark/light themes, confirmation toggles,
   quick links to tools/backups/log folders.
 
+## Screenshot
+<p align="center"> <img src="https://github.com/user-attachments/assets/76bc7233-0ff3-43ed-8363-a92fc76c46e3" alt="Windows Toolkit — Screenshot 136" width="49%" /> <img src="https://github.com/user-attachments/assets/1fbb517b-4eb1-4956-9ec6-4b9591421673" alt="Windows Toolkit — Screenshot 137" width="49%" /> </p> <p align="center"> <img src="https://github.com/user-attachments/assets/850c74b8-3082-4e79-a679-c42947cb6734" alt="Windows Toolkit — Screenshot 138" width="49%" /> <img src="https://github.com/user-attachments/assets/0bc117af-b100-46fb-88d0-b5a1d730b6e5" alt="Windows Toolkit — Screenshot 139" width="49%" /> </p> <p align="center"> <img src="https://github.com/user-attachments/assets/35ad8222-d5f9-4386-9afa-f11d52ba9aee" alt="Windows Toolkit — Screenshot 135" width="75%" /> </p>
+
+
 ## Project Structure
 
 - `assets/tools_manifest.json` – declarative manifest that defines categories,
