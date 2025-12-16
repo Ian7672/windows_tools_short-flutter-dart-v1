@@ -1,0 +1,155 @@
+{
+  "categories": [
+    {
+      "id": "updater",
+      "title": "Updater",
+      "description": "Native maintenance tools."
+    },
+    {
+      "id": "cleaner",
+      "title": "Cleaner",
+      "description": "Startup optimizer and junk cleaner."
+    },
+    {
+      "id": "other",
+      "title": "Other",
+      "description": "Reserved for future tooling."
+    }
+  ],
+  "tools": [
+    {
+      "id": "gamingServices",
+      "title": "Disable Gaming Update",
+      "category": "updater",
+      "description": "Recreates firewall rules that block GamingServices and GamingServicesNet services from reaching the internet. Restore to remove the rules.",
+      "localizedTitles": {
+        "zh": "禁用 Gaming 更新"
+      },
+      "localizedDescriptions": {
+        "zh": "重新创建阻止 GamingServices 及 GamingServicesNet 服务访问互联网的防火墙规则。恢复即可移除这些规则。"
+      },
+      "requiresAdmin": true,
+      "riskLevel": "Low",
+      "allowCancel": true,
+      "serviceActions": [],
+      "registryActions": [],
+      "firewallActions": [
+        {
+          "ruleName": "BLOCK - GamingServices (service) - OUT",
+          "direction": "out",
+          "serviceName": "GamingServices",
+          "group": "LWT Gaming Services"
+        },
+        {
+          "ruleName": "BLOCK - GamingServices (service) - IN",
+          "direction": "in",
+          "serviceName": "GamingServices",
+          "group": "LWT Gaming Services"
+        },
+        {
+          "ruleName": "BLOCK - GamingServicesNet (service) - OUT",
+          "direction": "out",
+          "serviceName": "GamingServicesNet",
+          "group": "LWT Gaming Services"
+        },
+        {
+          "ruleName": "BLOCK - GamingServicesNet (service) - IN",
+          "direction": "in",
+          "serviceName": "GamingServicesNet",
+          "group": "LWT Gaming Services"
+        }
+      ]
+    },
+    {
+      "id": "googleUpdater",
+      "title": "Disable Google Updater",
+      "category": "updater",
+      "description": "Blocks Google Update services from reaching the internet via firewall rules (restart to re-enable).",
+      "localizedTitles": {
+        "zh": "禁用 Google 更新程序"
+      },
+      "localizedDescriptions": {
+        "zh": "通过防火墙规则阻止 Google Update 服务访问互联网（重启即可重新启用）。"
+      },
+      "requiresAdmin": true,
+      "riskLevel": "Low",
+      "allowCancel": true,
+      "serviceActions": [],
+      "registryActions": [],
+      "firewallActions": []
+    },
+    {
+      "id": "windowsUpdateDisabler",
+      "title": "Disable Windows Update",
+      "category": "updater",
+      "description": "Stops Windows Update related services and applies update policies so the OS stays offline until you restore it.",
+      "localizedTitles": {
+        "zh": "禁用 Windows 更新"
+      },
+      "localizedDescriptions": {
+        "zh": "停止与 Windows 更新相关的服务并应用更新策略，使系统离线直至你恢复它。"
+      },
+      "requiresAdmin": true,
+      "riskLevel": "Low",
+      "allowCancel": true,
+      "serviceActions": [
+        {
+          "serviceName": "wuauserv",
+          "startType": "disabled",
+          "stopService": true,
+          "startService": false
+        },
+        {
+          "serviceName": "UsoSvc",
+          "startType": "disabled",
+          "stopService": true,
+          "startService": false
+        },
+        {
+          "serviceName": "BITS",
+          "startType": "disabled",
+          "stopService": true,
+          "startService": false
+        },
+        {
+          "serviceName": "DoSvc",
+          "stopService": true,
+          "startService": false
+        }
+      ],
+      "registryActions": [],
+      "firewallActions": [
+        {
+          "ruleName": "WU Block - wuauserv (service) - OUT",
+          "direction": "out",
+          "serviceName": "wuauserv",
+          "group": "Ian7672 - WU Block"
+        },
+        {
+          "ruleName": "WU Block - UsoSvc (service) - OUT",
+          "direction": "out",
+          "serviceName": "UsoSvc",
+          "group": "Ian7672 - WU Block"
+        },
+        {
+          "ruleName": "WU Block - WaaSMedicSvc (service) - OUT",
+          "direction": "out",
+          "serviceName": "WaaSMedicSvc",
+          "group": "Ian7672 - WU Block"
+        },
+        {
+          "ruleName": "WU Block - BITS (service) - OUT",
+          "direction": "out",
+          "serviceName": "BITS",
+          "group": "Ian7672 - WU Block"
+        },
+        {
+          "ruleName": "WU Block - DoSvc (service) - OUT",
+          "direction": "out",
+          "serviceName": "DoSvc",
+          "group": "Ian7672 - WU Block"
+        }
+      ]
+    }
+  ]
+}
